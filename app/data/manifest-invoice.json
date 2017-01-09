@@ -1,0 +1,35 @@
+[
+    {
+        "mawb": "2002022341", //number required, link tag, additional format with red for delay, green for arrival
+        "hawb": {
+          "hawb-no": "4004091188",
+          "hawb-link": "http://program.prouter.com/PrintExpCode/xinong?oId=437090&eno=4004090085&weight=15.2", // click to view hawb
+        },
+        "pkgs": {
+          "gw": "5.8",
+          "pcs": "1"
+        },
+        "inv": {
+          "pkg-no": "1",
+          "line-items": [{
+            "name": "女士T恤",
+            "cat": "clothes",
+            "cat-detail": "woman shirt",
+            "pcs": "3",
+            "USDpc": "1.66",
+            "material": "co",
+            "manufacturing": "woven",
+            "pic": "http://thumbnail.image.rakuten.co.jp/ran/img/1001/0004/979/654/025/065/10010004979654025065_1.jpg?_ex=50x50"
+          }],
+
+        "consignee": {
+          "name": "Luo mingkun",
+          "address": {
+            "zipcode": "061118",
+            "address": "abc street"
+          },
+          "tel": "09018738283"
+        },
+
+      },
+    }]

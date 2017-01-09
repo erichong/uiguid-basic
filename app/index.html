@@ -1,43 +1,53 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
+<!doctype html>
+<html ng-app="app">
+  <head>
+<!--     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script> -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+<!--     <script src="http://ui-grid.info/release/ui-grid.js"></script> -->
+    <script src="/bower_components/angular-ui-grid/ui-grid.js"></script>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+<!--     <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" type="text/css"> -->
+    <script src="https://npmcdn.com/ui-grid-auto-fit-columns@latest/dist/autoFitColumns.min.js"></script>
 
-  <div ng-view></div>
+    <link rel="stylesheet" href="app.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap-flatly.min.css" type="text/css">
+  </head>
+  <body>
 
-  <div>Angular seed app: v<span app-version></span></div>
+    <div ng-controller="MainCtrl" >
+<!--           <div ng-controller="MainCtrl" > -->
+      <br>
+      <button type="button" class="btn btn-success" ng-click="checkAddress()">Check Address</button>
+      <button type="button" class="btn btn-primary" ng-click="checkTel()")>Check Tel</button>
+      <button type="button" class="btn btn-primary" ng-click="checkCons()">Check Name</button>
+      <button type="button" class="btn btn-warning" ng-click="deleteSelected()">Delete Selected</button>
+      <div class="btn-group pull-right" role="group" aria-label="ExportCustomisedCSV">
+         <span class="badge">OUT</span>
+        <button type="button" class="btn btn-success" ng-click="exportCSV()">Export CSV</button>
+        <button type="button" class="btn btn-success" ng-click="exportCSVSeino()">Seino-CSV</button>
+        <button type="button" class="btn btn-success" ng-click="exportCSVKangaru()">Kangaru-CSV</button>
+        <button type="button" class="btn btn-success" ng-click="toDb()">toDB</button>
+      </div>
+      <br>
+      <div ui-i18n="{{lang}}" id="grid1" ui-grid="gridOptions1"
+           ui-grid-auto-fit-columns ui-grid-resize-columns ui-grid-auto-resize
+           ui-grid-importer ui-grid-pagination ui-grid-edit ui-grid-cellnav
+           ui-grid-selection ui-grid-grouping ui-grid-exporter class="grid"></div>
+    </div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-</body>
+    <div ui-i18n="{{lang}}" id="grid2" ui-grid="gridOptions2" class="grid2">
+<!--grid to check invoice line item, which includes desc.of goods, pcs, unit price, and info for customes declaration like material knit, baby, kitchen        -->
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
